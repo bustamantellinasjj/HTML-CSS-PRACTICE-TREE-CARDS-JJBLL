@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!--INDICA QUE EL DOCUMENTO ES HTML5-->
+<html lang="es"> <!--IDIOMA DEL CONTENIDO (ESPAÑOL)-->
+
+<head> <!--ENCABEZADO DEL DOCUMENTO | DEFINE COMO SE COMPORTA LA PAGINA WEB | NO SE MUESTRA EN LA PÁGINA-->
+    <meta charset="UTF-8"> <!--DEFINE LA CODIFICACIÓN DE CARACTERES | PERMITE LA VISUALIZACIÓN DE CARACTERES ESPECIALES-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--CONFIGURA LA VISTA PARA DISPOSITIVOS MÓVILES | width=device-width: ANCHO DE LA PANTALLA DEL DISPOSITIVO | initial-scale=1.0: NIVEL DE ZOOM INICIAL-->
+    <meta name="author" content="Juan J. Bustamante"> <!--INDICA EL AUTOR DEL DOCUMENTO-->
+    <meta name="description" content="Tarjetas de informacion sobre personajes del anime Seven Deadly Sins para practicar conceptos de HTML y CSS"> <!--DESCRIPCIÓN DEL CONTENIDO DE LA PÁGINA | !! APARECE EN GOOGLE DEBAJO DEL TÍTULO DE LA PÁGINA !!-->
+    <title>Seven Deadly Sins | Tarjetas de Información</title> <!--TÍTULO DE LA PÁGINA | APARECE EN LA PESTAÑA DEL NAVEGADOR Y EN LOS RESULTADOS DE BÚSQUEDA-->
+    <link rel="stylesheet" href="style.css"> <!--ENLACE A LA HOJA DE ESTILOS CSS | rel="stylesheet": INDICA QUE ES UNA HOJA DE ESTILOS | href="style.css": RUTA DEL ARCHIVO CSS | VITAL; IMPORTAR LA PARTE VISUAL --> 
+</head> <!--CIERRE DEL ENCABEZADO-->
+
+<body> <!--CUERPO DEL DOCUMENTO | CONTIENE TODO EL CONTENIDO VISIBLE DE LA PÁGINA | ESQUELETO DE LA PÁGINA | DISTRIBUCIÓN DE ELEMENTO -->
+
+    <main class="contenedor-principal"> <!--CONTENEDOR PRINCIPAL | AGRUPA TODO EL CONTENIDO DE LA PÁGINA | CLASE PARA APLICAR ESTILOS DESDE CSS-->
+        <article class="tarjeta unoo"> <!--article class="tarjeta" REPRESENTA UNA TARJETA DE INFORMACIÓN-->
+            <header class="tarjeta-header"> <!--header class="tarjeta-header" REPRESENTA EL ENCABEZADO DE LA TARJETA-->
+                <div class="foto-perfil uno"></div> <!--FOTO DE PERFIL | CONTENEDOR PARA LA IMAGEN DE PERFIL-->
+                <h1>Meliodas</h1> <!--NOMBRE DEL PERSONAJE-->
+                <p class="subtitulo">Líder de los Siete Pecados Capitales</p> <!--SUBTÍTULO O DESCRIPCIÓN BREVE DEL PERSONAJE-->
+            </header> <!--CIERRE DEL ENCABEZADO DE LA TARJETA-->
+
+            <section class="tarjeta-cuerpo"> <!--section class="tarjeta-cuerpo" REPRESENTA EL CUERPO DE LA TARJETA-->
+                <p>Meliodas「メリオダス, Meriodasu」 es el líder de los Siete Pecados Capitales. Él es el protagonista masculino de la historia, su pecado es la <span class="resaltado">Ira</span> y su símbolo el Dragón, también es el propietario del Boar Hat.</p> <!--DESCRIPCIÓN BREVE DEL PERSONAJE-->
+
+                <div class="habilidades"> <!--HABILIDADES O ATRIBUTOS DEL PERSONAJE | CONTENEDOR PARA LOS TAGS DE HABILIDADES-->
+                    <span class="tag">Raza: Demonio</span>
+                    <span class="tag">Espada Lostvayne</span>
+                    <span class="tag">Habilidad: Contrataque</span>
+                </div>
+            </section>
+
+            <footer class="tarjeta-pie">
+                <button class="btn-contacto">Seleccionar</button> <!--BOTÓN DE CONTACTO O ACCIÓN | class="btn-contacto" PARA APLICAR ESTILOS DESDE CSS-->
+            </footer> <!--CIERRE DEL PIE DE LA TARJETA-->
+        </article> <!--CIERRE DE LA TARJETA 1-->
+
+        <!-- TARJETA 2 -->
+        <article class="tarjeta doss">
+            <header class="tarjeta-header">
+                <div class="foto-perfil dos">
+                    <!-- <img src="foto2.jpg" alt="Nombre"> -->
+                </div>
+                <h1>Ban</h1>
+                <p class="subtitulo">Miembro de los Siete Pecados Capitales</p>
+            </header>
+            <section class="tarjeta-cuerpo">
+                <p>Ban「 バ ン」 es un miembro de los Siete Pecados Capitales, precisamente quien representa el pecado de la Codicia y además posee la marca del Zorro. Después de la disolución del grupo, Ban fue inicialmente encarcelado en Baste Dungeon, pero escapó cuando descubrió que Meliodas seguía vivo. Su tesoro sagrado es Courechouse. Además de ser inmortal, es conocido por su habilidad, Snatch.</p>
+                <div class="habilidades">
+                    <span class="tag">Raza: Humano</span>
+                    <span class="tag">Bastón Divino Courechouse</span>
+                    <span class="tag">Habilidad: Arrebato</span>
+                </div>
+            </section>
+            <footer class="tarjeta-pie">
+                <button class="btn-contacto">Seleccionar</button>
+            </footer>
+        </article>
+
+        <!-- TARJETA 3 -->
+        <article class="tarjeta tress">
+            <header class="tarjeta-header">
+                <div class="foto-perfil tres">
+                    <!-- <img src="foto2.jpg" alt="Nombre"> -->
+                </div>
+                <h1>Escanor</h1>
+                <p class="subtitulo">Miembro de los Siete Pecados Capitales</p>
+            </header>
+            <section class="tarjeta-cuerpo">
+                <p>Escanor「エスカノール, Esukanōru」 Fue miembro de los Siete Pecados Capitales . Su Pecado es la Soberbia (Orgullo en Latinoamérica) junto al símbolo del León . Fue conocido como el "Caballero Sagrado más fuerte". Su Tesoro Sagrado fue la Hacha Divina Rhitta, y su poder inherente se llama Sunshine, lo que lo hizo famoso por obtener un inmenso poder durante el día y debilitarse gradualmente durante la noche. Además era el príncipe del Reino de Castellio .</p>
+                <div class="habilidades">
+                    <span class="tag">Raza: Humano</span>
+                    <span class="tag">Hacha Divina Rhitta</span>
+                    <span class="tag">Habilidad: Rayo De Sol</span>
+                </div>
+            </section>
+            <footer class="tarjeta-pie">
+                <button class="btn-contacto">Seleccionar</button>
+            </footer>
+        </article>
+
+
+
+    </main> <!--CIERRE DEL CONTENEDOR PRINCIPAL-->
+
+</body> <!--CIERRE DEL CUERPO DEL DOCUMENTO-->
+</html> <!--CIERRE DEL DOCUMENTO HTML-->
