@@ -1,0 +1,330 @@
+/* ============================================================
+   RESET GENERAL
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   BODY — FONDO GENERAL DE LA PÁGINA
+   ============================================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://i.pinimg.com/1200x/55/08/a0/5508a01c9801cf3b9510b4536795f8de.jpg");
+    background-size: cover;
+    background-attachment: fixed; /* EL FONDO NO SE MUEVE AL HACER SCROLL */
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   HEADER DEL SITIO — TÍTULO PRINCIPAL
+   ============================================================ */
+.sitio-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: rgba(0, 0, 0, 0.6); /* FONDO NEGRO SEMITRANSPARENTE */
+    backdrop-filter: blur(4px);     /* DESENFOQUE DETRÁS DEL HEADER */
+}
+
+.sitio-titulo {
+    font-size: 3rem;
+    color: #FFD700; /* DORADO */
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* BRILLO DORADO */
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.sitio-subtitulo {
+    color: #ccc;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL — PONE LAS TARJETAS EN HORIZONTAL
+   ============================================================ */
+.contenedor-principal {
+    display: flex;              /* ACTIVA FLEXBOX */
+    flex-direction: row;        /* DIRECCIÓN HORIZONTAL (es el valor por defecto en flex) */
+    flex-wrap: wrap;            /* SI NO CABEN, BAJAN A LA SIGUIENTE FILA */
+    justify-content: center;    /* CENTRA LAS TARJETAS HORIZONTALMENTE */
+    align-items: flex-start;    /* LAS TARJETAS SE ALINEAN DESDE ARRIBA */
+    gap: 1.5rem;                /* ESPACIO ENTRE TARJETAS */
+    padding: 2rem;              /* ESPACIO INTERIOR DEL CONTENEDOR */
+}
+
+
+/* ============================================================
+   TARJETA — ESTILOS BASE COMPARTIDOS POR LAS 7 TARJETAS
+   ============================================================ */
+.tarjeta {
+    position: relative;     /* NECESARIO PARA EL ::before (FONDO CON BLUR) */
+    overflow: hidden;       /* OCULTA LO QUE SE SALGA DEL BORDE REDONDEADO */
+    width: 300px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    background: transparent;
+    transition: transform 1.2s linear; /* ANIMACIÓN COSNTANTE */
+    
+}
+
+/* EFECTO AL PASAR EL MOUSE POR ENCIMA */
+.tarjeta:hover {
+  
+    transform: scale(1.05) /* SUBE LA TARJETA 12px */
+    rotate(360deg)
+}
+
+/* TODOS LOS ELEMENTOS DENTRO DE LA TARJETA DEBEN ESTAR
+   POR ENCIMA DEL FONDO BORROSO (::before) */
+.tarjeta * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================================
+   ::before — FONDO BORROSO DE CADA TARJETA
+   El ::before es un elemento "fantasma" que se crea con CSS,
+   no existe en el HTML. Se usa para poner el fondo con blur
+   sin que el blur afecte al contenido de la tarjeta.
+   ============================================================ */
+.unoo::before,
+.doss::before,
+.tress::before,
+.cuatroo::before,
+.cincoo::before,
+.seiss::before,
+.sietee::before {
+    content: "";            /* OBLIGATORIO PARA QUE EL ::before EXISTA */
+    position: absolute;     /* SE POSICIONA RELATIVO A LA TARJETA */
+    inset: 0;               /* OCUPA TODO EL ESPACIO DE LA TARJETA (top/right/bottom/left: 0) */
+    filter: blur(5px);      /* APLICA EL DESENFOQUE SOLO AL FONDO */
+    transform: scale(1.1);  /* AGRANDA LIGERAMENTE PARA EVITAR BORDES BLANCOS AL HACER BLUR */
+    z-index: 0;             /* QUEDA DETRÁS DEL CONTENIDO */
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ============================================================
+   FONDOS INDIVIDUALES DE CADA TARJETA
+   Cada tarjeta tiene su propia imagen de fondo
+   ============================================================ */
+.unoo { background-image: url("https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyMnNnMmJoczdmNXNzM2cyazQ5NHJ2N2RkemF4Z2dhb3UzeWl0eHdjMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qcOxCNCKfHN1C/source.gif"); background-size: cover; background-position: center; }
+.doss { background-image: url("https://i.pinimg.com/736x/4d/70/20/4d70204d606c470317911afeb0fb4883.jpg"); background-size: cover; background-position: center; }
+.tress { background-image: url("https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyc3YxZndpeTl0NG5oeGlnNmljeTdvNnlkMW1scWxvOHFwMm5qZTR4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/LURDTf4W7Er0KVbuH7/giphy.gif"); background-size: cover; background-position: center; }
+.cuatroo { background-image: url("https://i.pinimg.com/736x/06/07/82/06078206d155d81f81123d4701f0ec13.jpg"); background-size: cover; background-position: center; }
+.cincoo { background-image: url("https://static.wikia.nocookie.net/nanatsu-no-taizai/images/5/58/Diane_using_Mother_Catastrophe.gif/revision/latest?cb=20181003011314&path-prefix=es"); background-size: cover; background-position: center; }
+.seiss { background-image: url("https://i.makeagif.com/media/8-28-2023/y8RC45.gif"); background-size: cover; background-position: center; }
+.sietee { background-image: url("https://animesher.com/orig/2/205/2051/20518/animesher.com_manga-2018-anime-nanatsu-no-taizai-2051893.gif"); background-size: cover; background-position: center; }
+
+/* LOS ::before TAMBIÉN NECESITAN SU IMAGEN (para el efecto blur) */
+.unoo::before { background-image: url("https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyMnNnMmJoczdmNXNzM2cyazQ5NHJ2N2RkemF4Z2dhb3UzeWl0eHdjMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qcOxCNCKfHN1C/source.gif"); }
+.doss::before { background-image: url("https://giffiles.alphacoders.com/208/208058.gif"); }
+.tress::before { background-image: url("https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyc3YxZndpeTl0NG5oeGlnNmljeTdvNnlkMW1scWxvOHFwMm5qZTR4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/LURDTf4W7Er0KVbuH7/giphy.gif"); }
+.cuatroo::before { background-image: url("https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUydndjeXA0dzB2NzNtajVqdHd4d3Brc2hxNGZxZWllYzI1bWN4N240ZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gp1FpydzebCZW/giphy.gif"); }
+.cincoo::before { background-image: url("https://static.wikia.nocookie.net/nanatsu-no-taizai/images/5/58/Diane_using_Mother_Catastrophe.gif/revision/latest?cb=20181003011314&path-prefix=es"); }
+.seiss::before { background-image: url("https://i.makeagif.com/media/8-28-2023/y8RC45.gif"); }
+.sietee::before { background-image: url("https://animesher.com/orig/2/205/2051/20518/animesher.com_manga-2018-anime-nanatsu-no-taizai-2051893.gif"); }
+
+
+/* ============================================================
+   FOTO DE PERFIL — CÍRCULO CON LA IMAGEN DEL PERSONAJE
+   ============================================================ */
+.foto-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;         /* CONVIERTE EL CUADRADO EN CÍRCULO */
+    margin: 0 auto 1rem;        /* CENTRA Y DA ESPACIO ABAJO */
+    overflow: hidden;           /* LA IMAGEN NO SE SALE DEL CÍRCULO */
+    border: 3px solid #FFD700; /* BORDE DORADO */
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.5); /* BRILLO DORADO */
+}
+
+/* LA IMAGEN OCUPA TODO EL CÍRCULO SIN DEFORMARSE */
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* RECORTA LA IMAGEN PARA QUE LLENE EL CÍRCULO */
+    object-position: top;       /* PRIORIZA LA PARTE SUPERIOR (la cara) */
+}
+
+
+/* ============================================================
+   TEXTOS DE LA TARJETA
+   ============================================================ */
+h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.subtitulo {
+    color: #FFD700;             /* DORADO */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.tarjeta-cuerpo p {
+    color: #f0f0f0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+}
+
+/* TEXTO RESALTADO (el nombre del pecado) */
+.resaltado {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   HABILIDADES / TAGS
+   ============================================================ */
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;            /* SI NO CABEN EN UNA LÍNEA, BAJAN */
+    gap: 6px;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.55); /* FONDO NEGRO SEMITRANSPARENTE */
+    color: #FFD700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+
+/* ============================================================
+   BOTÓN SELECCIONAR — ES UN <a> CON ESTILO DE BOTÓN
+   Se usa <a> en lugar de <button> porque redirige a otra página
+   ============================================================ */
+.btn-contacto {
+    display: block;             /* OCUPA TODO EL ANCHO DISPONIBLE */
+    margin-top: 1.5rem;
+    background-color: #FFD700;
+    color: #111;
+    text-decoration: none;      /* QUITA EL SUBRAYADO DEL ENLACE */
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #e6c200;
+}
+
+.btn-contacto:active {
+    background-color: #b89900;
+}
+
+
+/* ============================================================
+   FOOTER DEL SITIO
+   ============================================================ */
+.sitio-footer {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    color: #ccc;
+    padding: 2.5rem 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-contenido {
+    display: flex;              /* LAS 3 SECCIONES DEL FOOTER EN HORIZONTAL */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-seccion {
+    min-width: 200px;
+    text-align: center;
+}
+
+.footer-seccion h3 {
+    color: #FFD700;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.footer-seccion p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+/* LISTA DE REDES SOCIALES */
+.footer-links {
+    list-style: none;           /* QUITA LOS PUNTOS DE LA LISTA */
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #FFD700;
+}
+
+/* BOTÓN DE ORIGINS */
+.btn-origins {
+    display: inline-block;
+    margin-top: 0.8rem;
+    background-color: #FFD700;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-origins:hover {
+    background-color: #e6c200;
+}
+
+/* LÍNEA INFERIOR DEL FOOTER */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.78rem;
+    color: #777;
+}
